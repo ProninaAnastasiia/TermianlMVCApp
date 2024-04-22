@@ -1,0 +1,76 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #f2f6fc;
+}
+.container {
+    width: 100%;
+    max-width: 100%;
+}
+.pb-3 {
+    margin-left: 270px;
+    font-weight: 600;
+}
+.logo-image {
+    width: 50px; 
+    height: auto; 
+}
+.header-image {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+.header {
+    background-color: #333333;
+    height: 90px;
+}
+/* Стили для иконки перед ссылкой */
+.sidebar-image {
+    width: 35px;
+    height: auto;
+}
+.sidebar-span{
+    margin-left:5px;
+    font-weight:600;
+}
+.sidebar-div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+/* Стили для боковой панели */
+.sidebar {
+    width: 270px;
+    height: calc(100vh - 90px); /* Высота панели будет равна высоте окна просмотра */
+    background-color: #ffffff;
+    box-shadow: 4px 0 4px rgba(0, 0, 0, 0.2);
+    position:absolute;
+    left: 0;
+}
+/* Стили для элементов навигации */
+.sidebar a {
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
+    margin: 40px 30px 20px 10px;
+}
+

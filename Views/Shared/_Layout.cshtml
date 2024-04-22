@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vendista TermianlMVCApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TermianlMVCApp.styles.css" asp-append-version="true" />
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand me-auto" href="#">
+                    <img src="~/images/logo.jpg" alt="Vendista" class="logo-image" />
+                    <span class="navbar-brand-span" style="color: #f2f2f2">VENDISTA</span>
+                </a>
+                <a class="navbar-brand me-auto" style="color: #f2f2f2" href="#">Личный кабинет - Отправка команды в терминал</a>
+                <a class="nav-link" style="color: #f2f2f2" href="#">
+                    <img src="~/images/user.png" alt="Партнёр" class="header-image" />
+                    <span class="nav-link-span">Партнёр</span>
+                </a>
+                <a class="nav-link" href="#"> <img src="~/images/logout.png" alt="logout" class="header-image" /> </a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+            <a href="#" style="color: #000000">
+                <img src="~/images/client.png" alt="Клиенты" class="sidebar-image">
+                <span class="sidebar-span">Клиенты</span>
+             </a>
+            <a href="#" style="color: #000000">
+                <img src="~/images/users.png" alt="Клиенты" class="sidebar-image">
+                <span class="sidebar-span">Пользователи</span>
+            </a>
+            <a class="active" href="#" style="color: #000000">
+                <img src="~/images/terminals.png" alt="Клиенты" class="sidebar-image">
+                <span class="sidebar-span">Терминалы</span>
+            </a>
+            <a href="#" style="color: #000000">
+                <img src="~/images/bank.png" alt="Клиенты" class="sidebar-image">
+                <span class="sidebar-span">TID банка</span>
+            </a>
+            <a href="#" style="color: #000000">
+                <img src="~/images/transactions.png" alt="Клиенты" class="sidebar-image">
+                <span class="sidebar-span">Транзакции</span>
+            </a>
+            <a href="#" style="color: #000000">
+                <img src="~/images/logs.png" alt="Клиенты" class="sidebar-image">
+                <span class="sidebar-span">Логи терминалов</span>
+            </a>
+            <a href="#" style="color: #000000">
+                <img src="~/images/cash-register.png" alt="Клиенты" class="sidebar-image">
+                <span class="sidebar-span">Кассы</span>
+            </a>
+            <a href="#" style="color: #000000" class="two-icons">
+                <div class="sidebar-div">
+                    <img src="~/images/terminals.png" alt="Клиенты" class="sidebar-image">
+                    <img src="~/images/client.png" alt="Клиенты" class="sidebar-image">
+                    <span class="sidebar-span">Привязать терминалы к клиенту списком</span>
+                </div>
+            </a>           
+
+        </div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

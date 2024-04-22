@@ -1,0 +1,40 @@
+﻿@model MyViewModel
+@section Styles {
+    <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
+}
+<script>
+    window.commandTypeData = @Html.Raw(Json.Serialize(Model.CommandTypes));
+</script>
+<p>Отправка команды на терминал</p>
+
+<form asp-action="PostCommand">
+    <div class="container-lable">
+        <label asp-for="CommandViewModel.TerminalId" class="lable-a">ID Терминала(ов)</label>
+        <label asp-for="CommandViewModel.CommandId" class="lable-b">Команда</label>
+    </div>
+    <div class="container-input">
+        <textarea asp-for="CommandViewModel.TerminalId" type="text" class="a" id="terminalId" name="terminalId" style="resize:none;"></textarea>
+        <input asp-for="CommandViewModel.CommandId" type="text" class="b" list="commandList" id="commandInput" name="command" placeholder="Выберите команду">
+        <datalist class="datalist-b" id="commandList">
+            @foreach (var commandType in Model.CommandTypes)
+            {
+                <option value="@commandType.name"></option>
+            }
+        </datalist>
+    </div>
+    <div class="container-lable" id="lablesContainer">
+        <label for="parameter1" class="parameters-lable">Команда</label>
+        <label for="parameter2" class="parameters-lable">Команда</label>
+        <label for="parameter3" class="parameters-lable">Команда</label>
+    </div>
+    <div class="container-input" id="parametersContainer">
+        <input asp-for="CommandViewModel.Parameter1" type="text" class="parameters-input" id="parameter1" name="parameterName" >
+        <input asp-for="CommandViewModel.Parameter2" type="text" class="parameters-input" id="parameter2" name="parameterName" placeholder="Выберите команду">
+        <input asp-for="CommandViewModel.Parameter3" type="text" class="parameters-input" id="parameter3" name="parameterName" placeholder="Выберите команду">
+    </div>
+
+    <div class="container-buttons">
+        <button class="btn-back">Назад</button>
+        <button type="submit" class="btn-send">Отправить</button>
+    </div>
+</form>

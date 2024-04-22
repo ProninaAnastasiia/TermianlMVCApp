@@ -1,0 +1,79 @@
+﻿p {
+    padding: 20px 0px 25px 15px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: #e4e8ee;
+    margin-right: 30px;
+    margin-left: 10px;
+    padding: 15px 10px 30px 15px;
+}
+.container-input, .container-lable {
+    display: flex;
+}
+.a, .b {
+    flex: 1 0 auto;
+}
+.lable-a, .lable-b, .parameters-lable {
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 5px;
+}
+.a {
+    margin-right: 10px;
+    padding: 10px 10px 10px 15px;
+    height: 300px;
+    border-radius: 3px;
+    border: none;
+}
+.b, .parameters-input {
+    height: 50px;
+    background-color: white;
+    background-position-x: 10px;
+    padding: 5px 10px 10px 35px;
+    border-radius: 3px;
+    border: none;
+}
+.parameters-lable {
+    margin-top: 20px;
+}
+
+.parameters-input {
+    flex-grow: 1;
+    padding-left: 15px;
+    margin: 10px 5px 0px 5px;
+}
+input.b:focus, textarea.a:focus, input.parameters-input {
+    outline: none;
+}
+input::placeholder {
+    color: #adb5c5; 
+}
+.container-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.btn-back, .btn-send {
+    width: 170px;
+    height: 40px;
+    margin: 40px 0px 10px 0px;
+    background-color: #eaeaea;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-back {
+    background-color: #adb5c5;
+    color: #ffffff;
+    margin-right: 15px;
+}
+
+.btn-send {
+    color: #ffffff;
+    background-color: #1ab392;
+}
