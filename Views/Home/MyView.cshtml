@@ -7,18 +7,19 @@
 </script>
 <p>Отправка команды на терминал</p>
 
-<form asp-action="PostCommand">
+<form id="myForm" asp-action="PostCommand" onsubmit="updateActionUrl()">
     <div class="container-lable">
         <label asp-for="CommandViewModel.TerminalId" class="lable-a">ID Терминала(ов)</label>
         <label asp-for="CommandViewModel.CommandId" class="lable-b">Команда</label>
     </div>
     <div class="container-input">
-        <textarea asp-for="CommandViewModel.TerminalId" type="text" class="a" id="terminalId" name="terminalId" style="resize:none;"></textarea>
-        <input asp-for="CommandViewModel.CommandId" type="text" class="b" list="commandList" id="commandInput" name="command" placeholder="Выберите команду">
+        <textarea asp-for="CommandViewModel.TerminalId" type="text" class="a" id="terminalId" name="TerminalId" style="resize:none;"></textarea>
+        <input asp-for="CommandViewModel.CommandId" type="text" class="hidden-input" id="hiddenInput" name="CommandId">
+        <input type="text" class="b" list="commandList" id="commandInput" placeholder="Выберите команду" onchange="updateCommandId(this)">
         <datalist class="datalist-b" id="commandList">
             @foreach (var commandType in Model.CommandTypes)
             {
-                <option value="@commandType.name"></option>
+                <option value="@commandType.name" data-id="@commandType.id"></option>
             }
         </datalist>
     </div>
@@ -28,9 +29,9 @@
         <label for="parameter3" class="parameters-lable">Команда</label>
     </div>
     <div class="container-input" id="parametersContainer">
-        <input asp-for="CommandViewModel.Parameter1" type="text" class="parameters-input" id="parameter1" name="parameterName" >
-        <input asp-for="CommandViewModel.Parameter2" type="text" class="parameters-input" id="parameter2" name="parameterName" placeholder="Выберите команду">
-        <input asp-for="CommandViewModel.Parameter3" type="text" class="parameters-input" id="parameter3" name="parameterName" placeholder="Выберите команду">
+        <input asp-for="CommandViewModel.Parameter1" type="text" class="parameters-input" id="parameter1" name="Parameter1">
+        <input asp-for="CommandViewModel.Parameter2" type="text" class="parameters-input" id="parameter2" name="Parameter2">
+        <input asp-for="CommandViewModel.Parameter3" type="text" class="parameters-input" id="parameter3" name="Parameter3">
     </div>
 
     <div class="container-buttons">

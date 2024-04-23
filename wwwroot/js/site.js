@@ -1,4 +1,14 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
+﻿function updateActionUrl() {
+    var terminalId = document.getElementById("terminalId").value;
+    var form = document.getElementById("myForm");
+    form.action = "/terminals/" + terminalId + "/commands";
+}
+function updateCommandId(input) {
+    var selectedOption = input.list.querySelector('option[value="' + input.value + '"]');
+    var commandId = selectedOption.getAttribute('data-id');
+    document.getElementById('hiddenInput').value = commandId;
+}
+document.addEventListener('DOMContentLoaded', () => {
     const commandInput = document.getElementById('commandInput');
     const lablesContainer = document.getElementById('lablesContainer');
     const parametersContainer = document.getElementById('parametersContainer');

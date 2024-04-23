@@ -50,6 +50,9 @@ input.b:focus, textarea.a:focus, input.parameters-input {
 input::placeholder {
     color: #adb5c5; 
 }
+.hidden-input{
+    display:none;
+}
 .container-buttons {
     display: flex;
     justify-content: center;

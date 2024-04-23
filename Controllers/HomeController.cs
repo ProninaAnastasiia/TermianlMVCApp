@@ -18,7 +18,7 @@ namespace TermianlMVCApp.Controllers
         public async Task<IActionResult> Index()
         {
             var data = await _apiService.GetCommandsTypes();
-            var myView = new MyViewModel { CommandTypes = data };
+            var myView = new MyViewModel(data);
             return View("MyView", myView);
         }
 
@@ -29,14 +29,11 @@ namespace TermianlMVCApp.Controllers
 
         [HttpPost]
         [Route("/terminals/{id}/commands")]
-        public IActionResult PostCommand(int id, [Bind("Title,ReleaseDate,Genre,Price")] CommandViewModel command)
+        public IActionResult PostCommand(int id, [Bind("TerminalId,CommandId,Parameter1,Parameter2,Parameter3")] CommandViewModel command)
         {
-            int commandId = command.CommandId;
-            // Выполните необходимые действия на сервере, используя переданные данные commandId и id
-
-            // Верните соответствующий результат (например, сообщение об успехе или код состояния HTTP)
-
-            return Ok();
+            //_apiService.SendCommand(command);
+           
+            return Ok(command);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
